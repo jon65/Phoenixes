@@ -87,43 +87,67 @@ app.post("/add-desc", async (req, res) => {
 
 app.post("/add-location", async (req, res) => {
   const {email,location } = req.body;
+  console.log(email);
   try {
 
-    User.findOne({ email })
+    User.find({ email: email })
       .then(async (data) => {
-        res.send({ status: "ok", data: data });
+        
         await User.updateOne(
           {
+            email:email
+          },
+          {
             $set: {
-              location: location,
+              location: location
             },
           }
         );
+        res.send({ status: "ok", data: data });
+        
       })
+      
+      
       .catch((error) => {
         res.send({ status: "error", data: error });
       });
+
   } catch (error) { }
 });
 
 app.post("/add-hobbies", async (req, res) => {
   const {email,hobbies } = req.body;
+  console.log(email);
   try {
 
-    User.findOne({ email })
+    User.find({ email: email })
       .then(async (data) => {
-        res.send({ status: "ok", data: data });
+        
+        
+        
         await User.updateOne(
           {
+            email:email
+          },
+          {
             $set: {
-              hobbies: hobbies,
+              hobbies: hobbies
             },
           }
+          
         );
+        res.send({ status: "ok", data: data });
+        
+        
       })
+      
+      
       .catch((error) => {
         res.send({ status: "error", data: error });
+        
       });
+  
+
   } catch (error) { }
 });
 
@@ -274,7 +298,7 @@ app.get("/getAllUser", async (req, res) => {
   }
 });
 
-app.get("/getAllLocationUser", async (req, res) => {
+app.get("/getLocationUsers", async (req, res) => {
   const { location } = req.body;
   console.log(location)
   try {
