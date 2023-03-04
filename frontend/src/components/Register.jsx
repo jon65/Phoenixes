@@ -2,32 +2,38 @@ import React, { useEffect, useState } from "react";
 import '../../src/App.css';
 
 const Register = (props) => {
-    const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
-    const [name, setName] = useState('');
-    const handleSubmit = async (e) =>  {
-        try {
-      let res = await fetch("https://httpbin.org/post", {
-        method: "POST",
-        body: JSON.stringify({
-            fname: '',
-            lname: '',
-          email: '',
-          mobileNumber: '',
-        }),
-      });
-      let resJson = await res.json();
-      if (res.status === 200) {
-        setName("");
-        setEmail("");
-        // setMessage("User created successfully");
-      } else {
-        // setMessage("Some error occured");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-    }
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
+  const [name, setName] = useState('');
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(email);
+      console.log(pass);
+      console.log(name)
+      fetch("http://localhost:5000/register", {
+          method: "POST",
+          crossDomain: true,
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            pass,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data, "userRegister");
+            if (data.status == "ok") {
+              alert("Registration Successful");
+            } else {
+              alert("Something went wrong");
+            }});
+  }
 
     return (
         <div className="auth-form-container">

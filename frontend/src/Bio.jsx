@@ -15,7 +15,7 @@ export const Bio = (props) => {
             <form className="bio-form" onSubmit={handleSubmit}>
                 <label htmlFor="pfp" className="subtitle">Profile picture</label>
                 <button type="submit" class="login">Add profile picture</button>
-                <input value={bio} name="bio" onChange={(e) => setName(e.target.value)} id="bio" placeholder="enter details about yourself here!" />
+                <input value={bio} name="bio" onChange={(e) => setBio(e.target.value)} id="bio" placeholder="enter details about yourself here!" />
             </form>
             <button className="link-btn" onClick={() => props.onFormSwitch('GO BACK')}>Go back</button>
             <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button>
