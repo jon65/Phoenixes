@@ -53,11 +53,14 @@ button {
 
 .subtitle {
   color: black;
+  font-weight: bold;
+  font-size: 150%;
   text-shadow: 2px 2px 2px white;
 }
 
 .login {
   box-shadow: 10px 10px 5px grey;
+  font-size: 150%;
 }
 
 .input {
