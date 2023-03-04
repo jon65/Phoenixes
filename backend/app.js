@@ -32,9 +32,9 @@ require("./imageDetails");
 const User = mongoose.model("UserInfo");
 const Images = mongoose.model("ImageDetails");
 app.post("/register", async (req, res) => {
-  const { fname, lname, email, password, userType } = req.body;
+  const { name, email, pass } = req.body;
 
-  const encryptedPassword = await bcrypt.hash(password, 10);
+  const encryptedPassword = await bcrypt.hash(pass, 10);
   try {
     const oldUser = await User.findOne({ email });
 
@@ -42,11 +42,9 @@ app.post("/register", async (req, res) => {
       return res.json({ error: "User Exists" });
     }
     await User.create({
-      fname,
-      lname,
+      name,
       email,
-      password: encryptedPassword,
-      userType,
+      pass: encryptedPassword,
     });
     res.send({ status: "ok" });
   } catch (error) {
