@@ -7,6 +7,30 @@ export const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(email);
+        fetch("http://localhost:5000/login-user", {
+            method: "POST",
+            crossDomain: true,
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              "Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify({
+              email,
+              pass,
+            }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data, "userRegister");
+              if (data.status == "ok") {
+                alert("login successful");
+                window.localStorage.setItem("token", data.data);
+                window.localStorage.setItem("loggedIn", true);
+      
+                window.location.href = "./userDetails";
+              }
+            });
     }
 
     
