@@ -12,6 +12,7 @@ import {
 import NavBar  from './components/Navbar';
 import Home from './components/Home';
 import Register from './components/Register';
+import Hobby from './components/Hobby';
 
 function App() {
   // const [currentForm, setCurrentForm] = useState('login');
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" exact element={<Home /> } />
         <Route path="/register" exact element={<Register /> } />
         <Route path="/login" exact element={<Login /> } />
+        <Route path="/hobby" exact element={<Hobby /> } />
       </Routes>
     </div>
   );
