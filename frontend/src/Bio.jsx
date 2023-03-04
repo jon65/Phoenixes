@@ -17,6 +17,7 @@ export const Bio = (props) => {
                 <button type="submit" class="login">Add profile picture</button>
                 <input value={bio} name="bio" onChange={(e) => setName(e.target.value)} id="bio" placeholder="enter details about yourself here!" />
             </form>
+            <button className="link-btn" onClick={() => props.onFormSwitch('GO BACK')}>Go back</button>
             <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button>
         </div>
     )
