@@ -12,6 +12,10 @@ import {
 import NavBar  from './components/Navbar';
 import Home from './components/Home';
 import Register from './components/Register';
+import UserProfile from './components/UserProfile';
+import Dashboard from './components/dashboard/Dashboard';
+import FriendList from './components/FriendList';
+
 
 function App() {
   // const [currentForm, setCurrentForm] = useState('login');
@@ -26,7 +30,10 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home /> } />
         <Route path="/register" exact element={<Register /> } />
+        <Route path="/register/userProfile" exact element={<UserProfile /> } />
         <Route path="/login" exact element={<Login /> } />
+        <Route path="/dashboard" exact element={<Dashboard /> } />
+        <Route path="/friendList" exact element={<FriendList /> } />
       </Routes>
     </div>
   );
