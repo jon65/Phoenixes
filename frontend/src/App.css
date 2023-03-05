@@ -58,6 +58,7 @@ button {
 /* classes */
 
 .title {
+  color: rgb(12, 12, 12);
   font-size: 75px;
   font-family: 'Trebuchet MS';
   text-shadow: 5px 5px 5px grey

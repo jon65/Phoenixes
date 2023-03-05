@@ -165,6 +165,7 @@ const Register = (props) => {
     //     <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
     // </div>
   return (
+    <div className="App">
     <div className="auth-form-container">
       <img class="logo" src={require('./../img/logo.png')} alt="Frienderlies logo" />
       <h2 class="title">Register</h2>
@@ -207,6 +208,7 @@ const Register = (props) => {
       </form>
         <Link className="link-btn" to="/login">Already have an account? Login here.</Link>
        {/* <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button> */}
+    </div>
     </div>
   );
 
