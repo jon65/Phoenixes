@@ -183,7 +183,7 @@ const Register = (props) => {
         <Input
           ref={emailInputRef}
           id="email"
-          label="E-Mail"
+          label="Email"
           type="email"
           isValid={emailIsValid}
           value={emailState.value}
