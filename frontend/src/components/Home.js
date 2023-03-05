@@ -12,6 +12,7 @@ const Home = () => {
   return (
     <div className="App">
       <div>
+        <img class="logo" src={require('./../img/logo.png')} alt="Frienderlies logo" />
         <h1>This is the home page</h1>
         <li>
           <Link to="/register">Register</Link>
