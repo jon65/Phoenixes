@@ -12,10 +12,6 @@ import {
 import NavBar  from './components/Navbar';
 import Home from './components/Home';
 import Register from './components/Register';
-import UserProfile from './components/UserProfile';
-import Dashboard from './components/dashboard/Dashboard';
-import FriendList from './components/FriendList';
-
 
 function App() {
   // const [currentForm, setCurrentForm] = useState('login');
