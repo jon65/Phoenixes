@@ -66,7 +66,7 @@ const Dashboard = () => {
     }
 
     return (
-        <div>
+        <div className="App">
             <Link className="link-btn" to="/friendList"><div>
             </div>
                 Your Friends

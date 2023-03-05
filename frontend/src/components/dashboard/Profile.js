@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 const Profile = (props) => {
 
     return (
-        <div>
+        <div className="App">
             {props.username}
             { props.hobbies}
         </div>
